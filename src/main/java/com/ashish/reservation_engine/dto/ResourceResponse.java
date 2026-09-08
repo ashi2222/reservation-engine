@@ -1,44 +1,29 @@
-package com.ashish.reservation_engine.entity;
+package com.ashish.reservation_engine.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.ashish.reservation_engine.entity.Resource;
 
-@Entity
-@Table(name = "resource")
-public class Resource {
+public class ResourceResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
-
-    @Column(name = "name", nullable = false)
     private String name;
-
-    @Column(name = "total_capacity", nullable = false)
     private Integer totalCapacity;
-
-    @Column(name = "available_capacity", nullable = false)
     private Integer availableCapacity;
 
-    public Resource() {
+    public ResourceResponse() {
     }
 
-    public Resource(String name, Integer totalCapacity, Integer availableCapacity) {
-        this.name = name;
-        this.totalCapacity = totalCapacity;
-        this.availableCapacity = availableCapacity;
-    }
-
-    public Resource(Long id, String name, Integer totalCapacity, Integer availableCapacity) {
+    public ResourceResponse(Long id, String name, Integer totalCapacity, Integer availableCapacity) {
         this.id = id;
         this.name = name;
         this.totalCapacity = totalCapacity;
         this.availableCapacity = availableCapacity;
+    }
+
+    public ResourceResponse(Resource resource) {
+        this.id = resource.getId();
+        this.name = resource.getName();
+        this.totalCapacity = resource.getTotalCapacity();
+        this.availableCapacity = resource.getAvailableCapacity();
     }
 
     public Long getId() {
@@ -75,7 +60,7 @@ public class Resource {
 
     @Override
     public String toString() {
-        return "Resource{" +
+        return "ResourceResponse{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", totalCapacity=" + totalCapacity +
