@@ -1,5 +1,8 @@
 # Reservation Engine - AI Coding Rules
 
+## Owner says
+Do not execute Git commands or modify anything inside the `.git` directory. Git operations will be handled manually outside the coding agent.
+
 ## 1. General Rule
 
 This project is being developed incrementally for learning and interview preparation.

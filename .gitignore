@@ -31,3 +31,30 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Operating System Files ###
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+### Logs & JVM Dumps ###
+*.log
+logs/
+*.hprof
+hs_err_pid*
+replay_pid*
+
+### Secrets & Environment Variables ###
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+### Temporary & Editor Files ###
+*.tmp
+*.bak
+*.swp
+*~
